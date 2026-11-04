@@ -1,21 +1,24 @@
+// AOJ Lesson: ITP1_1_C: Rectangle
+// Calculates the area and perimeter of a rectangle
+
 #include <iostream>
 
-void user_input(int& a, int& b)
+void user_input(int& width, int& height)
 {
-    std::cin >> a >> b;
+    std::cin >> width >> height;
 }
 
 
-int pirimiter(int PirimiterA, int PirimiterB)
+int pirimiter(int PirimiterWidth, int PirimiterHeight)
 {
 
-    return 2 * (PirimiterA + PirimiterB);
+    return 2 * (PirimiterWidth + PirimiterHeight);
 }
 
-int S(int S_A, int S_B)
+int area(int Area_width, int Area_height)
 {
 
-    return S_A * S_B;
+    return Area_width * Area_height;
 }
 
 int main()
@@ -24,7 +27,7 @@ int main()
     int num2 {};
     user_input(num1, num2);
     int result2 = pirimiter(num1, num2);
-    int result = S(num1, num2);
+    int result = area(num1, num2);
     std::cout << result << ' ' << result2 << std::endl;
     return 0;
 }
