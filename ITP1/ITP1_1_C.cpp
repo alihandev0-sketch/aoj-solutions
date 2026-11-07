@@ -3,31 +3,39 @@
 
 #include <iostream>
 
+// Reads the dimensions from standard input using references (&)
 void user_input(int& width, int& height)
 {
     std::cin >> width >> height;
 }
 
-
-int pirimiter(int PirimiterWidth, int PirimiterHeight)
+// Calculates the perimeter: 2 * (width + height)
+int perimeter(int width, int height)
 {
-
-    return 2 * (PirimiterWidth + PirimiterHeight);
+    return 2 * (width + height);
 }
 
-int area(int Area_width, int Area_height)
+// Calculates the area: width * height
+int area(int width, int height)
 {
-
-    return Area_width * Area_height;
+    return width * height;
 }
 
 int main()
 {
-    int num1 {};
-    int num2 {};
+    int num1 {}; // Stores width
+    int num2 {}; // Stores height
+    
+    // 1. Get input from AOJ system
     user_input(num1, num2);
-    int result2 = pirimiter(num1, num2);
-    int result = area(num1, num2);
-    std::cout << result << ' ' << result2 << std::endl;
+    
+    // 2. Perform calculations
+    int rect_perimeter = perimeter(num1, num2);
+    int rect_area = area(num1, num2);
+    
+    // 3. Print area and perimeter separated by a space, followed by a newline
+    // AOJ strictly checks the format: "[Area] [Perimeter]\n"
+    std::cout << rect_area << ' ' << rect_perimeter << std::endl;
+    
     return 0;
 }
